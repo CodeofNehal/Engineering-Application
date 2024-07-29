@@ -1,0 +1,66 @@
+<html>
+  <head>
+     <title>Engineering Application</title>
+     <style>
+         *{
+             font-size:40px;
+             font-family:Times New Roman;
+             background-color:linen;
+          }
+
+          Input[type="checkbox"]{
+              height:0.5em;
+              width:2%;
+          }
+
+          h1,h2
+          {
+             background-color:black;
+             color:white;
+             width:70%;
+             border-radius:2px;
+          }
+
+     </style>
+  </head>
+  <body>
+    <center>
+        <h1>Engineering Application</h1>
+        <form onsubmit="show()">
+            <label for="name">Name : </label>
+            <input type="text" placeholder="enter your name" id="name">
+            <br><br>
+            <label for="eyear">Select Year of Engineering</label>
+            <select id="eyear">
+               <option value="FE">FE</option>
+               <option value="SE">SE</option>
+               <option value="TE">TE</option>
+               <option value="BE">BE</option>
+            </select>
+            <br><br>
+            <input type="submit"/>
+        </form>
+            <h2 id="msg"/>
+      <script>
+            function show()
+            {
+               event.preventDefault();
+               let name=document.getElementById("name");
+               let eyear=document.getElementById("eyear");
+               let msg=document.getElementById("msg");
+
+               if(name.value==="")
+               {
+                  alert("Please enter your name");
+                  msg.innerHTML="";
+                  name.focus();
+                  return;
+               }
+   
+               let a="Name=  "+ name.value + " Engineering= "+eyear.value;
+               msg.innerHTML=a;
+            }
+      </script>
+    </center>
+  </body>
+</html>
